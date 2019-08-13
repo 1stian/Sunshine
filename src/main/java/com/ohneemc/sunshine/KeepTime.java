@@ -11,7 +11,12 @@ public class KeepTime implements Listener {
 
     @EventHandler
     void keepTime(WeatherChangeEvent e){
-        e.getWorld().setWeatherDuration(0);
-        e.getWorld().setTime(4303);
+        try {
+            e.getWorld().setStorm(false);
+            e.getWorld().setThundering(false);
+            e.getWorld().setTime(4303);
+        }catch (Exception ex){
+            ex.printStackTrace();
+        }
     }
 }

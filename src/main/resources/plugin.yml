@@ -1,0 +1,7 @@
+name: Sunshine
+version: "1.0"
+author: Stian "1stian" Tofte
+website: https://ohneemc.com
+main: com.ohneemc.sunshine.Sunshine
+api-version: "1.14"
+prefix: Sunshine

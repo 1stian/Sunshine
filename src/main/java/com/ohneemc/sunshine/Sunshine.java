@@ -14,5 +14,6 @@ public class Sunshine extends JavaPlugin {
     public void onEnable(){
         Metrics metrics = new Metrics(this);
         this.getServer().getPluginManager().registerEvents(new KeepTime(this), this);
+        this.getServer().getPluginManager().registerEvents(new JoinEvent(this), this);
     }
 }

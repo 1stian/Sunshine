@@ -5,12 +5,11 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
 
 public class JoinEvent implements Listener {
-
-    public JoinEvent(Sunshine sunshine) {
-    }
+    private Sunshine plugin;
+    public JoinEvent(Sunshine plugin){this.plugin = plugin;}
 
     @EventHandler
     void setTime(PlayerJoinEvent e){
-        e.getPlayer().getWorld().setTime(4303);
+        e.getPlayer().getWorld().setTime(plugin.time);
     }
 }

@@ -24,7 +24,9 @@ public class Sunshine extends JavaPlugin {
         pSet().setDefault("Sunshine.TickToKeep", 4303);
 
         //Load settings
-        if (loadSettings()) getServer().getLogger().info("Settings loaded! Tick to keep: " + time);
+        if (loadSettings()){
+            getServer().getLogger().info("Settings loaded! Tick to keep: " + time);
+        }
 
         //Events
         this.getServer().getPluginManager().registerEvents(new KeepTime(this), this);
@@ -33,9 +35,10 @@ public class Sunshine extends JavaPlugin {
 
     private boolean loadSettings(){
         try{
-            pSet().getInt("Sunshine.TickToKeep");
+            time = pSet().getInt("Sunshine.TickToKeep");
             return true;
         }catch (Exception e){
+            getServer().getLogger().warning("Couldn't load settings file...");
             return false;
         }
     }
